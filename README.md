@@ -25,6 +25,17 @@ Developed by: **Iman Shirani**
 2.  Copy `3dsMaxInspector.py` to your 3ds Max scripts folder.
 3.  Run the script via `Scripting -> Run Script...` or drag and drop it into the viewport.
 
+   or
+
+   ## 📦 Installation
+
+Installing the plugin is quick and requires no manual setup in 3ds Max.
+
+1. **Unzip** the downloaded package.
+2. **Copy** the `.bundle` folder to the Autodesk Application Plugins directory:
+   ```text
+   C:\ProgramData\Autodesk\ApplicationPlugins
+
 ## 🖥 Usage
 * **Refresh Scene:** Updates the tree with current scene objects.
 * **Re-Scan All Classes:** Performs a deep scan of all available 3ds Max classes (useful after installing new plugins).
