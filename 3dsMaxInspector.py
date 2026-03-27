@@ -1,7 +1,7 @@
 # ==========================
 # 3ds Max Inspector
 # IMAN SHIRANI
-# V0.0.1
+# V0.0.2
 # GITHUB :
 # https://github.com/imanshirani/3ds-Max-Inspector/
 # PAYPAL DONATION : (if you like it and want to support me)
@@ -72,7 +72,7 @@ class MaxInspector(QtWidgets.QWidget):
         self._cache_file_path = os.path.join(os.path.dirname(script_path), "max_classes_cache.json")
         # --- END CACHE ---
         
-        self.setWindowTitle("3DS Max Inspector — Script Helper")
+        self.setWindowTitle("3DS Max Inspector Script Helper")
         self.setMinimumSize(1000, 800)
         self._all_classes = []  # list of (name, super, classid, plugin)
         self._by_super = {}
@@ -992,10 +992,11 @@ class MaxInspector(QtWidgets.QWidget):
             self.log("No class selected to copy.")
 
 # Launch
-def run_inspector():
+def main():
     global _max_inspector_ui
     try:
         _max_inspector_ui.close()
+        _max_inspector_ui.deleteLater()
     except Exception:
         pass
     
@@ -1007,9 +1008,10 @@ def run_inspector():
         print(f"--- PYTHON CRITICAL ERROR: Failed to create MaxInspector UI! ---")
         print(f"--- ERROR: {e} ---")
         try:
-            rt.execute(f'format "--- PYTHON CRITICAL ERROR: Failed to create MaxInspector UI! Error: {e} ---\n"')
+            rt.execute(f'format "--- PYTHON CRITICAL ERROR: Failed to create MaxInspector UI! Error: {e} ---\\n"')
         except:
             pass
             
 # Run when executed
-run_inspector()
+if __name__ == "__main__":
+    main()
